@@ -1,8 +1,151 @@
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Pavan Kumar Reddy C | Portfolio</title>  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="style.css"></head><body>
-  <!-- Navbar -->  <header>    <nav class="navbar">      <div class="logo">Pavan Kumar Reddy C</div>      <ul class="nav-links">        <li><a href="#about">About</a></li>        <li><a href="#skills">Skills</a></li>        <li><a href="#projects">Projects</a></li>        <li><a href="#contact">Contact</a></li>      </ul>    </nav>  </header>
-  <!-- Hero Section -->  <section id="about" class="hero">    <div class="hero-content">      <h1>Hello, I'm Pavan Kumar Reddy C</h1>      <p>DevOps & AI/ML enthusiast with experience in SQL, Linux, Python, and cloud technologies. I build scalable systems, automate workflows, and explore AI-driven solutions.</p>      <a href="#projects" class="btn">View Projects</a>    </div>  </section>
-  <!-- Skills Section -->  <section id="skills" class="skills-section">    <h2>My Skills</h2>    <div class="skills-grid">      <span>SQL</span>      <span>Linux</span>      <span>Python</span>      <span>DevOps</span>      <span>Cloud (AWS/GCP)</span>      <span>AI/ML</span>      <span>Data Engineering</span>      <span>LLM & Automation</span>    </div>  </section>
-  <!-- Projects Section -->  <section id="projects" class="projects-section">    <h2>Projects</h2>    <div class="projects-grid">      <div class="project-card">        <h3>Enterprise Fraud Risk Management</h3>        <p>Application to prevent and detect fraud, generate alerts, and learn from historical data.</p>      </div>      <div class="project-card">        <h3>Hotel & Restaurant Management System</h3>        <p>Website with toggle between hotel & restaurant UI, Firebase backend, and real-time support.</p>      </div>      <div class="project-card">        <h3>AI/ML Infrastructure Learning</h3>        <p>30-day checklist plan to master Python, ML basics, and project deployment.</p>      </div>    </div>  </section>
-  <!-- Contact Section -->  <section id="contact" class="contact-section">    <h2>Contact Me</h2>    <p>Email: <a href="mailto:pavankumarreddy9290@gmail.com">pavankumarreddy9290@gmail.com</a></p>    <p>LinkedIn: <a href="https://linkedin.com/in/pavan-c" target="_blank">linkedin.com/in/pavan-c</a></p>    <p>GitHub: <a href="https://github.com/Pantham630/" target="_blank">github.com/Pantham630/</a></p>  </section>
-  <footer>    <p>© 2025 Pavan Kumar Reddy C. All Rights Reserved.</p>  </footer>
-  <script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Kumar Reddy | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Pavan Kumar Reddy 👋</h1>
+        <p class="text-lg mb-6">A passionate Full-Stack Developer & Fraud Analyst with expertise in building web apps, managing data, and solving real-world problems.</p>
+        <a href="#projects" class="bg-white text-purple-600 px-6 py-3 rounded-lg shadow-md font-semibold hover:bg-gray-200">View My Work</a>
+      </div>
+      <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Developer Illustration" class="w-80 rounded-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-6">👨‍💻 About Me</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        I am a Full-Stack Developer with strong experience in Python, Django, MySQL, and React.
+        I’ve also worked in the Banking domain as a Fraud Analyst, handling data-heavy projects like Enterprise Fraud Risk Management (Efrm).
+        My passion lies in solving problems, creating efficient systems, and continuously learning modern technologies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">⚡ Skills</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <h3 class="font-semibold text-xl">Frontend</h3>
+          <p class="text-gray-600 mt-2">React, Tailwind CSS, JavaScript</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <h3 class="font-semibold text-xl">Backend</h3>
+          <p class="text-gray-600 mt-2">Django, Node.js, REST APIs</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-md">
+          <h3 class="font-semibold text-xl">Database & Tools</h3>
+          <p class="text-gray-600 mt-2">MySQL, Oracle SQL, Git, CI/CD</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-10">🚀 Projects</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
+
+      <!-- Project 1 -->
+      <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721290.png" class="w-20 mx-auto mb-4" alt="">
+        <h3 class="text-xl font-semibold">Hotel & Restaurant Management System</h3>
+        <p class="text-gray-600 mt-3">
+          Built a dynamic **Hotel & Restaurant Management System** using Django, MySQL, and React.
+          Added booking, menu management, and feedback features, along with an intuitive **admin dashboard**.
+          Integrated GitHub CI/CD for deployment, ensuring smooth automation and scalability.
+        </p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-20 mx-auto mb-4" alt="">
+        <h3 class="text-xl font-semibold">Enterprise Fraud Risk Management</h3>
+        <p class="text-gray-600 mt-3">
+          Worked on **fraud detection** in large-scale financial transactions across UPI, Mobile Banking, and Internet Banking.
+          Automated fraud alert generation and optimized SQL queries for performance.
+          Reduced false positives by enhancing query logic and improving compliance reports.
+        </p>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png" class="w-20 mx-auto mb-4" alt="">
+        <h3 class="text-xl font-semibold">Portfolio Website</h3>
+        <p class="text-gray-600 mt-3">
+          Designed and deployed a **personal portfolio** using Tailwind CSS and JavaScript.
+          Added smooth animations, responsive UI, and professional visuals with open-source illustrations.
+          Hosted on GitHub Pages to make it accessible across all devices.
+        </p>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/940/940190.png" class="w-20 mx-auto mb-4" alt="">
+        <h3 class="text-xl font-semibold">Machine Learning Engineer Roadmap</h3>
+        <p class="text-gray-600 mt-3">
+          Designed a step-by-step **ML Engineer roadmap** for self-learners covering Python, Data Science, ML, and Deployment.
+          Structured into checkpoints with resources and project-based learning.
+          Helps beginners transition to **industry-ready ML projects** effectively.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-16 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-10">💼 Experience</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/3176/3176366.png" class="w-16 mx-auto mb-4" alt="">
+        <h3 class="text-xl font-semibold">Fraud Analyst – Banking Domain</h3>
+        <p class="text-gray-600 mt-3">
+          Worked on **Enterprise Fraud Risk Management (Efrm)** handling fraud detection and alert monitoring.
+          Collaborated with compliance teams to improve fraud reporting accuracy.
+          Optimized SQL queries to reduce fraud detection time and false positives.
+        </p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" class="w-16 mx-auto mb-4" alt="">
+        <h3 class="text-xl font-semibold">Full-Stack Developer – Freelance</h3>
+        <p class="text-gray-600 mt-3">
+          Delivered **custom full-stack applications** using Django, MySQL, and React.
+          Designed APIs, admin dashboards, and booking systems for small businesses.
+          Strengthened expertise in Git, CI/CD, and cloud deployment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold mb-6">📩 Contact Me</h2>
+      <p class="text-gray-600 mb-6">Let’s collaborate! Reach out for projects, freelance work, or opportunities.</p>
+      <a href="mailto:youremail@example.com" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700">Say Hello</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <p>© 2025 Pavan Kumar Reddy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
