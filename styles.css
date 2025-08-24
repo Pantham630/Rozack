@@ -1,0 +1,49 @@
+/* General */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Poppins', sans-serif; line-height:1.6; background:#f8f9fa; color:#333;}
+h1,h2,h3 {margin-bottom:10px;}
+p {margin-bottom:10px;}
+a {text-decoration:none; color:inherit;}
+ul {list-style:none;}
+
+/* Header */
+header {display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#111; color:#fff; position:sticky; top:0;}
+.logo {font-size:1.5rem; font-weight:700;}
+header ul {display:flex; gap:20px; align-items:center;}
+header ul li {margin:0;}
+header ul li .btn {padding:8px 15px; background:#007bff; color:#fff; border:none; border-radius:6px; cursor:pointer;}
+
+/* Hero */
+.hero {text-align:center; padding:80px 20px; background:linear-gradient(135deg,#007bff,#6f42c1); color:#fff;}
+.hero h1 {font-size:3rem;}
+.hero p {margin:20px auto; max-width:600px; font-size:1.2rem;}
+.hero .btn {padding:12px 25px; background:#fff; color:#007bff; font-weight:600; border-radius:8px;}
+
+/* Sections */
+section {padding:60px 20px;}
+section h2 {text-align:center; margin-bottom:40px;}
+.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+.card {background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:transform 0.2s;}
+.card:hover {transform:translateY(-5px);}
+
+/* About */
+.about {text-align:center; max-width:800px; margin:auto;}
+
+/* Footer */
+footer {text-align:center; padding:20px; background:#111; color:#fff;}
+
+/* Login */
+.login-page {display:flex; justify-content:center; align-items:center; height:100vh; background:linear-gradient(135deg,#6f42c1,#007bff);}
+.login-box {background:#fff; padding:40px; border-radius:12px; width:300px; text-align:center; box-shadow:0 6px 12px rgba(0,0,0,0.2);}
+.login-box input {width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:6px;}
+.login-box .btn {width:100%; padding:10px; background:#007bff; color:#fff; border:none; border-radius:6px; cursor:pointer;}
+
+/* Dashboard */
+.dashboard {display:flex;}
+.sidebar {width:220px; background:#111; color:#fff; height:100vh; padding:20px;}
+.sidebar h2 {margin-bottom:20px;}
+.sidebar ul {display:flex; flex-direction:column; gap:15px;}
+.sidebar a {color:#fff; padding:8px; border-radius:6px; transition:background 0.2s;}
+.sidebar a:hover {background:#333;}
+main {flex:1; padding:40px;}
+.cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
