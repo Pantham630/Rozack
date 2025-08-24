@@ -1,151 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pavan Kumar Reddy | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kengen Learning - Transform Your Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ff6b6b;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: #4ecdc4;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ff6b6b;
+        }
+        
+        .btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #f8f9fa;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #4ecdc4;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card h3 {
+            color: #ff6b6b;
+            margin: 20px 0;
+        }
+        
+        /* Login Page */
+        .login-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .login-page.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .login-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+            transform: scale(0.9);
+            transition: transform 0.5s;
+        }
+        
+        .login-page.active .login-form {
+            transform: scale(1);
+        }
+        
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4ecdc4;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Deadpool Elements */
+        .deadpool {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            z-index: 10;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes shoot {
+            0% { transform: translateX(100vw) rotate(0deg); }
+            100% { transform: translateX(-100vw) rotate(360deg); }
+        }
+        
+        .bullet {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23ff6b6b"/></svg>') no-repeat;
+            background-size: contain;
+            animation: shoot 1s linear;
+            z-index: 5;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-purple-600 to-blue-500 text-white py-20">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-      <div class="md:w-1/2">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Pavan Kumar Reddy 👋</h1>
-        <p class="text-lg mb-6">A passionate Full-Stack Developer & Fraud Analyst with expertise in building web apps, managing data, and solving real-world problems.</p>
-        <a href="#projects" class="bg-white text-purple-600 px-6 py-3 rounded-lg shadow-md font-semibold hover:bg-gray-200">View My Work</a>
-      </div>
-      <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Developer Illustration" class="w-80 rounded-lg">
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-6">👨‍💻 About Me</h2>
-      <p class="text-gray-600 text-lg leading-relaxed">
-        I am a Full-Stack Developer with strong experience in Python, Django, MySQL, and React.
-        I’ve also worked in the Banking domain as a Fraud Analyst, handling data-heavy projects like Enterprise Fraud Risk Management (Efrm).
-        My passion lies in solving problems, creating efficient systems, and continuously learning modern technologies.
-      </p>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-10">⚡ Skills</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h3 class="font-semibold text-xl">Frontend</h3>
-          <p class="text-gray-600 mt-2">React, Tailwind CSS, JavaScript</p>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Kengen<span>Learning</span></a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#" class="btn" id="loginBtn">Login</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h3 class="font-semibold text-xl">Backend</h3>
-          <p class="text-gray-600 mt-2">Django, Node.js, REST APIs</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Education with a Twist of Awesomeness</h1>
+            <p>Transform your learning experience with our innovative platform designed to make education fun, engaging, and highly effective.</p>
+            <a href="#" class="btn" id="ctaBtn">Get Started Now</a>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md">
-          <h3 class="font-semibold text-xl">Database & Tools</h3>
-          <p class="text-gray-600 mt-2">MySQL, Oracle SQL, Git, CI/CD</p>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Kengen Learning?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Interactive Lessons</h3>
+                    <p>Engage with material that adapts to your learning style and keeps you motivated.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Gamified Progress</h3>
+                    <p>Earn rewards, unlock achievements, and track your progress with fun visualizations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals who are passionate about teaching.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Login Page (Hidden Initially) -->
+    <div class="login-page" id="loginPage">
+        <div class="login-form">
+            <h2>Login to Your Account</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn" style="width: 100%">Login</button>
+            </form>
+        </div>
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-16 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-10">🚀 Projects</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
+    <!-- Deadpool Element -->
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='20' y='25' width='60' height='50' rx='10' fill='%23ff6b6b'/><circle cx='35' cy='40' r='10' fill='white'/><circle cx='65' cy='40' r='10' fill='white'/><circle cx='35' cy='40' r='5' fill='black'/><circle cx='65' cy='40' r='5' fill='black'/><rect x='30' y='60' width='40' height='5' fill='white'/></svg>" alt="Deadpool" class="deadpool">
 
-      <!-- Project 1 -->
-      <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721290.png" class="w-20 mx-auto mb-4" alt="">
-        <h3 class="text-xl font-semibold">Hotel & Restaurant Management System</h3>
-        <p class="text-gray-600 mt-3">
-          Built a dynamic **Hotel & Restaurant Management System** using Django, MySQL, and React.
-          Added booking, menu management, and feedback features, along with an intuitive **admin dashboard**.
-          Integrated GitHub CI/CD for deployment, ensuring smooth automation and scalability.
-        </p>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-20 mx-auto mb-4" alt="">
-        <h3 class="text-xl font-semibold">Enterprise Fraud Risk Management</h3>
-        <p class="text-gray-600 mt-3">
-          Worked on **fraud detection** in large-scale financial transactions across UPI, Mobile Banking, and Internet Banking.
-          Automated fraud alert generation and optimized SQL queries for performance.
-          Reduced false positives by enhancing query logic and improving compliance reports.
-        </p>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png" class="w-20 mx-auto mb-4" alt="">
-        <h3 class="text-xl font-semibold">Portfolio Website</h3>
-        <p class="text-gray-600 mt-3">
-          Designed and deployed a **personal portfolio** using Tailwind CSS and JavaScript.
-          Added smooth animations, responsive UI, and professional visuals with open-source illustrations.
-          Hosted on GitHub Pages to make it accessible across all devices.
-        </p>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/940/940190.png" class="w-20 mx-auto mb-4" alt="">
-        <h3 class="text-xl font-semibold">Machine Learning Engineer Roadmap</h3>
-        <p class="text-gray-600 mt-3">
-          Designed a step-by-step **ML Engineer roadmap** for self-learners covering Python, Data Science, ML, and Deployment.
-          Structured into checkpoints with resources and project-based learning.
-          Helps beginners transition to **industry-ready ML projects** effectively.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="py-16 bg-gray-50">
-    <h2 class="text-3xl font-bold text-center mb-10">💼 Experience</h2>
-    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
-
-      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/3176/3176366.png" class="w-16 mx-auto mb-4" alt="">
-        <h3 class="text-xl font-semibold">Fraud Analyst – Banking Domain</h3>
-        <p class="text-gray-600 mt-3">
-          Worked on **Enterprise Fraud Risk Management (Efrm)** handling fraud detection and alert monitoring.
-          Collaborated with compliance teams to improve fraud reporting accuracy.
-          Optimized SQL queries to reduce fraud detection time and false positives.
-        </p>
-      </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" class="w-16 mx-auto mb-4" alt="">
-        <h3 class="text-xl font-semibold">Full-Stack Developer – Freelance</h3>
-        <p class="text-gray-600 mt-3">
-          Delivered **custom full-stack applications** using Django, MySQL, and React.
-          Designed APIs, admin dashboards, and booking systems for small businesses.
-          Strengthened expertise in Git, CI/CD, and cloud deployment.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold mb-6">📩 Contact Me</h2>
-      <p class="text-gray-600 mb-6">Let’s collaborate! Reach out for projects, freelance work, or opportunities.</p>
-      <a href="mailto:youremail@example.com" class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700">Say Hello</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-6 text-center">
-    <p>© 2025 Pavan Kumar Reddy. All Rights Reserved.</p>
-  </footer>
-
+    <script>
+        // DOM Elements
+        const loginBtn = document.getElementById('loginBtn');
+        const ctaBtn = document.getElementById('ctaBtn');
+        const loginPage = document.getElementById('loginPage');
+        
+        // Create gunshot animation
+        function createGunshot() {
+            const bullet = document.createElement('div');
+            bullet.classList.add('bullet');
+            
+            // Random position
+            const randomTop = Math.random() * 100;
+            bullet.style.top = `${randomTop}vh`;
+            bullet.style.left = '0';
+            
+            document.body.appendChild(bullet);
+            
+            // Remove bullet after animation completes
+            setTimeout(() => {
+                bullet.remove();
+            }, 1000);
+        }
+        
+        // Function to show login page with animation
+        function showLoginPage() {
+            // Create multiple gunshots
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createGunshot();
+                }, i * 200);
+            }
+            
+            // Show login page after delay
+            setTimeout(() => {
+                loginPage.classList.add('active');
+            }, 1000);
+        }
+        
+        // Event Listeners
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLoginPage();
+        });
+        
+        ctaBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLoginPage();
+        });
+        
+        // Close login page when clicking outside
+        loginPage.addEventListener('click', function(e) {
+            if (e.target === loginPage) {
+                loginPage.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
